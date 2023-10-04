@@ -42,9 +42,9 @@ public class UserService {
     @Autowired
     final JwtUtils jwtUtils;
     @Autowired
-    EmailService emailService;
+    final EmailService emailService;
     @Autowired
-    UserCustomRepository userCustomRepository;
+    final UserCustomRepository userCustomRepository;
 
     public UserResponse getUser(Long userId) {
         User user = findUser(userId);
@@ -75,8 +75,8 @@ public class UserService {
 
     public UserResponse updateUser(Long userId, UpdateUserRequest request) {
         User user = findUser(userId);
-        user.setFullName(request.getFullName().equals("") ? user.getFullName() : request.getFullName());
-        user.setPhone(request.getPhone().equals("") ? user.getPhone() : request.getPhone());
+        user.setFullName(request.getFullName());
+        user.setPhone(request.getPhone());
         userRepository.save(user);
 
         return UserResponse.builder()

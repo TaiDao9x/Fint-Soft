@@ -1,5 +1,6 @@
 package com.example.day01;
 
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
@@ -11,7 +12,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 public class Day01Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Day01Application.class, args);
+      SpringApplication.run(Day01Application.class, args);
     }
-
 }
